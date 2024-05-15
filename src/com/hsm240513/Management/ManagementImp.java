@@ -11,7 +11,7 @@ public abstract class ManagementImp implements Management {
     public Result addBook(String name) {
         Result result = new Result();
         try {
-            int currentBookCount = binfo.bName.length - checkBook(); // 获取当前已有书籍的数量
+            int currentBookCount = binfo.bName.length - checkBook(); 
             if (isDuplicationOfName(name) == 0) {
                 binfo.bName[currentBookCount] = name;
                 binfo.isBorrowed[currentBookCount] = "0";
@@ -84,7 +84,6 @@ public abstract class ManagementImp implements Management {
         try {
             String getName = findBookNamebyID(id);
             if (getName != null) {
-                // 省略与用户交互的代码，直接操作以便测试
                 result.setState(3);
                 result.setMsg("修改成功！");
             } else {
